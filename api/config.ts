@@ -1,7 +1,9 @@
-export default () => ({
+import { ConfigService } from '@nestjs/config';
+
+export default (configService: ConfigService) => ({
   github: {
-    accessToken: process.env.GITHUB_ACCESS_TOKEN,
-    githubUser: process.env.GITHUB_USER,
-    githubRepo: process.env.GITHUB_REPO,
+    accessToken: configService.get('GITHUB_ACCESS_TOKEN'),
+    githubUser: configService.get('GITHUB_USER'),
+    githubRepo: configService.get('GITHUB_REPO'),
   },
 });

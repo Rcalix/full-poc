@@ -3,18 +3,24 @@ import { CreateGithubDto } from './dto/create-github.dto';
 import { UpdateGithubDto } from './dto/update-github.dto';
 import { Octokit, App } from 'octokit';
 import config from '../../config';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class GithubService {
   private readonly octokit: Octokit;
+  private githubAccessToken: string;
+  private githubUser: string;
+  private githubRepo: string;
 
-  constructor() {
-    const accessToken = config().github.accessToken;
-    this.octokit = new Octokit({ auth: accessToken });
+  constructor(private configService: ConfigService) {
+    this.githubAccessToken =
+      this.configService.get<string>('GITHUB_ACCESS_TOKEN') || '';
+    this.githubUser = this.configService.get<string>('GITHUB_USER') || '';
+    this.githubRepo = this.configService.get<string>('GITHUB_REPO') || '';
+    this.octokit = new Octokit({ auth: this.githubAccessToken });
   }
   async findAll() {
-    const userName = config().github.githubUser || '';
-    const user = await this.getCommitList(userName);
+    const user = await this.getCommitList();
     return JSON.stringify(user);
   }
 
@@ -34,32 +40,34 @@ export class GithubService {
     return `This action removes a #${id} github`;
   }
 
-  async getUser(username: string) {
-    const { data } = await this.octokit.request(`GET /users/${username}`);
+  async getUser() {
+    const { data } = await this.octokit.request(
+      `GET /users/${this.githubUser}`,
+    );
     return data;
   }
 
-  async getRepos(username: string) {
+  async getRepos() {
     const { data } = await this.octokit.rest.repos.get({
-      owner: config().github.githubUser || '',
-      repo: config().github.githubRepo || '',
+      owner: this.githubUser,
+      repo: this.githubRepo,
     });
     return data;
   }
 
-  async getBranches(username: string) {
+  async getBranches() {
     const { data } = await this.octokit.rest.repos.listBranches({
-      owner: config().github.githubUser || '',
-      repo: config().github.githubRepo || '',
+      owner: this.githubUser,
+      repo: this.githubRepo,
     });
     return data;
   }
 
-  async getCommitList(username: string) {
-    console.log(config(), 'INFORMATION');
+  async getCommitList() {
+    console.log(this.githubRepo, this.githubAccessToken, 'INFORMATION');
     const { data } = await this.octokit.rest.repos.listCommits({
-      owner: config().github.githubUser || '',
-      repo: config().github.githubRepo || '',
+      owner: this.githubUser,
+      repo: this.githubRepo,
     });
     return data;
   }
