@@ -15,28 +15,23 @@ import { UpdateGithubDto } from './dto/update-github.dto';
 export class GithubController {
   constructor(private readonly githubService: GithubService) {}
 
-  @Post()
-  create(@Body() createGithubDto: CreateGithubDto) {
-    return this.githubService.create(createGithubDto);
-  }
-
   @Get()
-  async findAll() {
-    return this.githubService.findAll();
+  async getUser() {
+    return this.githubService.findUser();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.githubService.findOne(+id);
+  @Get('/repos')
+  async getRepos() {
+    return this.githubService.findAllRepos();
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateGithubDto: UpdateGithubDto) {
-    return this.githubService.update(+id, updateGithubDto);
+  @Get('/commits')
+  async getCommits() {
+    return this.githubService.findAllCommits();
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.githubService.remove(+id);
+  @Get('/branches')
+  async getBranches() {
+    return this.githubService.findAllBranches();
   }
 }

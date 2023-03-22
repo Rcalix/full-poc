@@ -19,25 +19,24 @@ export class GithubService {
     this.githubRepo = this.configService.get<string>('GITHUB_REPO') || '';
     this.octokit = new Octokit({ auth: this.githubAccessToken });
   }
-  async findAll() {
-    const user = await this.getCommitList();
+  async findAllRepos() {
+    const repos = await this.getRepos();
+    return JSON.stringify(repos);
+  }
+
+  async findAllBranches() {
+    const branches = await this.getBranches();
+    return JSON.stringify(branches);
+  }
+
+  async findAllCommits() {
+    const commits = await this.getCommitList();
+    return JSON.stringify(commits);
+  }
+
+  async findUser() {
+    const user = await this.getUser();
     return JSON.stringify(user);
-  }
-
-  create(createGithubDto: CreateGithubDto) {
-    return `This action returns all github`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} github`;
-  }
-
-  update(id: number, updateGithubDto: UpdateGithubDto) {
-    return `This action updates a #${id} github`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} github`;
   }
 
   async getUser() {
