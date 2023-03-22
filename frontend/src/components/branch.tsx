@@ -11,9 +11,9 @@ const Branch: React.FC<branchType> = ({name, protect, url}) => {
     return (
         <div className="flex items-center">
         <div className="p-4 w-full">
-            <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-12 sm:col-span-6 md:col-span-3">
-                <div className="flex flex-row bg-white shadow-sm rounded p-4">
+            <div className="grid grid-cols-2">
+            <div className="col-span-2 sm:col-span-2 md:col-span-3">
+                <div className="flex flex-row bg-black shadow-sm rounded p-4">
                 <div className="flex rounded-xl bg-green-100 text-green-500 p-2">
                 <FontAwesomeIcon icon={faCodeBranch} />
                  <div className="flex flex-col flex-grow ml-4 items-star">
@@ -23,9 +23,7 @@ const Branch: React.FC<branchType> = ({name, protect, url}) => {
                 </div>
                 </div>
             </div>
-
             </div>
-            
         </div>
         </div>
 

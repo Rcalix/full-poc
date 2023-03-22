@@ -1,8 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
-// import logo from '../assets/logo.svg';
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -11,7 +7,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps>= ({children}) => {
   return (
 <div className="ml-auto mb-6 p-5 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-black shadow-lg">
         <div className="md:flex items-center justify-center py-2 md:px-12">
             <div className="flex justify-between items-center">
                <div className="text-2xl font-bold text-gray-800 md:text-3xl">
