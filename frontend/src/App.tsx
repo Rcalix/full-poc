@@ -1,19 +1,22 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Header from './components/header'
+import Menu from './components/menu'
+import GithubPage from './pages/githubPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="flex flex-col w-64 h-screen bg-gray-900">
-    <div className="h-16 flex items-center justify-center text-white text-2xl font-bold">
-      My App
+    <div>
+          <Header>
+          </Header>
+          <Menu/>
+            <main className="ml-auto mb-6 p-5 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+              <div className="flex h-full items-center justify-center bg-white text-center text-5xl font-bold shadow-md">
+                <GithubPage />
+              </div>
+            </main>
     </div>
-    <div className="flex-grow p-4">
-      {/* Add your content here */}
-    </div>
-  </div>
   )
 }
 

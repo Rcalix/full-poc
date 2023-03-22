@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { CreateGithubDto } from './dto/create-github.dto';
-import { UpdateGithubDto } from './dto/update-github.dto';
 import { Octokit, App } from 'octokit';
 import config from '../../config';
 import { ConfigService } from '@nestjs/config';
