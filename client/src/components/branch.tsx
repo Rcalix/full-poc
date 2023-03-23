@@ -22,9 +22,9 @@ const Branch: React.FC<branchType> = ({name, protect, url}) => {
                 <div className="flex flex-row bg-black shadow-sm rounded p-4">
                 <div className={`flex rounded-xl ${validMain()}  p-2`}>
                 <FontAwesomeIcon icon={faCodeBranch} />
-                 <div className="flex flex-col flex-grow ml-4 items-star">
+                <div className="flex flex-col flex-grow ml-4 items-star">
                     <div className="text-lg">{name.toUpperCase()}</div>
-                    <div className="font-bold text-sm  text-gray-500">Protected: {protect.toString()}</div>
+                <div className="font-bold text-sm  text-gray-500">Protected: {protect.toString()}</div>
                 </div>
                 </div>
             </div>
