@@ -1,7 +1,7 @@
 # Project Name
 
-A brief description of what this project does and who it's for
-
+Fulltime Force Project
+This project is a proof of concept for fetching data from GitHub using Nest and React.
 ## Table of Contents
 
 - [Project Name](#project-name)
@@ -13,26 +13,33 @@ A brief description of what this project does and who it's for
 
 ## Installation
 
-Describe the installation process here. Use clear and concise language to explain what the user needs to do to get the project up and running.
-
+-  Clone the repository to your local machine.
+  Navigate to the server directory and run npm install to install the server dependencies.
+  Navigate to the client directory and run npm install to install the client dependencies.
+  Running the Project
 ### Clone
 
 - Clone this repo to your local machine using `https://github.com/your/remote/repository.git`
 
 ### Setup
 
-- Describe any setup steps that the user needs to do before using the project, such as installing dependencies or setting up environment variables.
-
+-  Open two terminal windows, one for the server and one for the client.
+In the first terminal window, navigate to the server directory and run npm run server-dev to start the server in development mode.
+In the second terminal window, navigate to the client directory and run npm run client-dev to start the client in development mode.
+Open a web browser and navigate to http://localhost:3000 to view the application.
 ## Usage
 
-Provide instructions on how to use the project here. Include examples if possible.
+Scripts
+This project includes the following scripts:
 
-## Contributing
-
-Contributions are welcome! If you have any bug fixes, feature requests, or other contributions, please submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+install-server: Installs the server dependencies.
+install-client: Installs the client dependencies.
+server-dev: Starts the server in development mode.
+client-dev: Starts the client in development mode.
 
 ## License
 
-Specify the license that your project is released under. For example, if you're using the MIT license, you could include the following:
 
+License
+This project is licensed under the MIT License.
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

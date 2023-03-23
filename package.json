@@ -1,9 +1,13 @@
 {
     "name": "fulltime-force-project",
     "version": "1.0.0",
-    "description": "My project description",
+    "description": "Poc using nest and react for fetching github data",
     "scripts": {
-      "api-dev": "cd api && nest start --watch"
+      "install-server": "cd server && npm install",
+      "install-client": "cd client && npm install",
+      "server-dev": "cd server && nest start --watch",
+      "client-dev": "cd client && npm run dev"
+
     },
     "author": "Ramon Calix",
     "license": "MIT"
