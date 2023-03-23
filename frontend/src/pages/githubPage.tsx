@@ -13,12 +13,7 @@ interface branchType {
 const GithubPage: React.FC = () => {
     const [branches, setBranches] = useState<branchType[]>([])
     const [commits, setCommits] = useState<CommitType[]>([])
-    const [profile, setProfile] = useState<GithubUser>()
-
-    const getUser = async() => {
-        const response = await fetch('http://localhost:3000/github');
-        setProfile(await response.json())
-    }
+ 
     const setCommitList = async() => {
         const response = await fetch('http://localhost:3000/github/commits');
         setCommits(await response.json())
@@ -28,7 +23,6 @@ const GithubPage: React.FC = () => {
             const response = await fetch('http://localhost:3000/github/branches');
             setBranches(await response.json());
             setCommitList()
-            getUser()
         }
         fetchData();
     },[])
@@ -44,7 +38,7 @@ const GithubPage: React.FC = () => {
                 </div>
             </div>
             <div className="ml-32 pr-10">
-		<h2 className="text-sm font-bold mt-14">Latest Changes</h2>
+		    <h2 className="text-sm font-bold pb-4">Latest Changes</h2>
             <ol className="relative border-l border-gray-200 dark:border-gray-700">
                 {commits.map((e: CommitType) => (
                     <CommitHistory commit={e.commit} sha={e.sha}/>

@@ -2,6 +2,8 @@ import React from 'react';
 
 
 const CommitHistory: React.FC<CommitType> = ({commit, sha}) => {
+  const colors = ['bg-pink-400', 'bg-blue-400', 'bg-green-400', 'bg-pink-400', 'bg-blue-400'];
+
     const getUrl = (sha: string) => {
         return `https://github.com/Rcalix/full-poc/commit/${sha}`
     }
@@ -18,22 +20,23 @@ const CommitHistory: React.FC<CommitType> = ({commit, sha}) => {
         }
       }
     return (
-        <li className="mb-10 ml-4  border-2 border-b-4 border-gray-200 rounded-xl hover:bg-green-100">
+        <li className={`mb-10 ml-4  border-2 border-b-4 border-gray-200 rounded-xl ${colors[Math.floor(Math.random() * colors.length)]}`}>
             <div className="flex items-center space-x-4 p-2 ">
                 <img className="w-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Rounded avatar"/>
-                <p className="text-sm text-green-400">{commit.author.name}</p>
+                <p className="text-sm text-white-400">{commit.author.name}</p>
             </div>
-            <p>
+            <p className='flex flex-wrap  justify-center align-middle'>
             <a href={getUrl(sha)}
-                className="text-sm font-normal hover:text-green-400 hover:underline">{commit.message}</a></p>
-        <div
-            className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-        </div>
-        <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{getTimeAgo(commit.author.date)}</time>
-
+                className="text-sm font-normal hover:text-white-400 hover:underline">{commit.message}</a></p>
+          <div
+              className="absolute w-3 h-3 bg-white rounded-full mt-1.5 -left-1.5 border border-green dark:border-white-900 dark:bg-white-700">
+          </div>
+          <p className="text-sm pb-2">{getTimeAgo(commit.author.date)}</p>
     </li>
     )
 }
+
+
 
 export interface CommitType {
     sha: string;

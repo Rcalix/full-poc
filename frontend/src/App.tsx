@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Header from './components/header'
 import Menu from './components/menu'
 import GithubPage from './pages/githubPage'
+import { UserContext } from './context/userContent'
 export interface GithubUserType {
   data: {
     login: string;
@@ -35,15 +36,16 @@ function App() {
       fetchData();
   },[])
   return (
-    <div className=' bg-black'>
-          <Header>
-          </Header>
-          <Menu data={profile}/>
-            <main className="ml-auto mb-6 p-5 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-              <div className="flex h-full items-center justify-center bg-white text-center text-5xl font-bold shadow-md">
+    <div className='bg-black'>
+          <UserContext.Provider value={profile?.data?.avatar_url}>
+          <Header />
+          <Menu data={profile} />
+            <main className=" bg-black ml-auto mb-6 p-5 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+              <div className=" flex h-full items-center justify-center text-center text-5xl font-bold shadow-md">
                 <GithubPage />
               </div>
             </main>
+        </UserContext.Provider>
     </div>
   )
 }
