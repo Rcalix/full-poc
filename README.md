@@ -1,6 +1,5 @@
-# Project Name
 
-Fulltime Force Project
+# Fulltime Force Project
 This project is a proof of concept for fetching data from GitHub using Nest and React.
 ## Table of Contents
 
