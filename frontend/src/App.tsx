@@ -24,7 +24,7 @@ export interface GithubUserType {
 }
 function App() {
   const [profile, setProfile] = useState<GithubUserType>()
-
+  console.log(process.env)
   const getUser = async() => {
       const response = await fetch('http://localhost:3000/github');
       setProfile(await response.json())
