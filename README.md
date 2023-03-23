@@ -45,12 +45,12 @@ GITHUB_REPO="full-poc"
 
 -  Scripts
 This project includes the following scripts:
-
+```
  `npm run install-server `: Installs the server dependencies.&nbsp;
  `npm run install-client `: Installs the client dependencies.&nbsp;
  `npm run server-dev `: Starts the server in development mode.&nbsp;
  `npm run client-dev `: Starts the client in development mode.&nbsp;
-
+```
 ## License
 
 
