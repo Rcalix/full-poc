@@ -14,24 +14,24 @@ This project is a proof of concept for fetching data from GitHub using Nest and 
 ## Installation
 
 -  Clone the repository to your local machine.
-  Navigate to the server directory and run npm install to install the server dependencies.
-  Navigate to the client directory and run npm install to install the client dependencies.
-  Running the Project
+  [^bignote]: Navigate to the server directory and run npm install to install the server dependencies.
+              Navigate to the client directory and run npm install to install the client dependencies.
+              Running the Project
 ### Setup
 
 -  Open two terminal windows, one for the server and one for the client.
-In the first terminal window, navigate to the server directory and run npm run server-dev to start the server in development mode.
-In the second terminal window, navigate to the client directory and run npm run client-dev to start the client in development mode.
-Open a web browser and navigate to `{http://localhost:3000}` to view the application.
+[^1]: In the first terminal window, navigate to the server directory and run npm run server-dev to start the server in development mode.
+      In the second terminal window, navigate to the client directory and run npm run client-dev to start the client in development mode.
+      Open a web browser and navigate to `{http://localhost:3000}` to view the application.
 ## Usage
 
 -  Scripts
 This project includes the following scripts:
 
- `{install-server }`: Installs the server dependencies.
- `{install-client }`: Installs the client dependencies.
- `{server-dev }`: Starts the server in development mode.
- `{client-dev }`: Starts the client in development mode.
+ `npm run install-server `: Installs the server dependencies.
+ `npm run install-client `: Installs the client dependencies.
+ `npm run server-dev `: Starts the server in development mode.
+ `npm run client-dev `: Starts the client in development mode.
 
 ## License
 
