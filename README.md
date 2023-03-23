@@ -15,7 +15,7 @@ This project is a proof of concept for fetching data from GitHub using Nest and 
 
 -  Clone the repository to your local machine.
 ```
- Navigate to the server directory and run npm install to install the server dependencies.
+Navigate to the server directory and run npm install to install the server dependencies.
 Navigate to the client directory and run npm install to install the client dependencies.
 Running the Project
 ```
@@ -24,8 +24,8 @@ Running the Project
 -  Open two terminal windows, one for the server and one for the client.
 ```
 In the first terminal window, navigate to the server directory and run npm run server-dev to start the server in development mode.
-      In the second terminal window, navigate to the client directory and run npm run client-dev to start the client in development mode.
-      Open a web browser and navigate to `{http://localhost:3000}` to view the application.
+In the second terminal window, navigate to the client directory and run npm run client-dev to start the client in development mode.
+Open a web browser and navigate to `{http://localhost:3000}` to view the application.
 ```
 -  Create .env file in both folders client and server
 For Client should be this 
